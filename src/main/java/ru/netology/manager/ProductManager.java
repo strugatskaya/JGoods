@@ -9,10 +9,12 @@ public class ProductManager {
     private ProductRepository productRepository;
 
     public ProductManager(ProductRepository productRepository) {
+
         this.productRepository = productRepository;
     }
 
     public void add(Product product) {
+
         productRepository.save(product);
     }
 
