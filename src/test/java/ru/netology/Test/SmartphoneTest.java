@@ -4,52 +4,33 @@ import org.junit.jupiter.api.Test;
 import ru.netology.domain.Product;
 import ru.netology.domain.Smartphone;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SmartphoneTest {
 
-
-    Smartphone smartphone_1 = new Smartphone(1, "Galaxy S10", 11, "Samsung");
+    Smartphone smartphone1 = new Smartphone(1, "Galaxy S10", 11, "Samsung");
+    Smartphone smartphone2 = new Smartphone(102, "IPhone 12", 100_000, "Apple");
 
     @Test
     public void shouldMatchProducerPositive() {
-        assertEquals(true, smartphone_1.matches("Samsung"));
+        assertTrue(smartphone1.matches("Samsung"));
     }
 
     @Test
     public void shouldNotMatchProducerPositive() {
-        assertEquals(false, smartphone_1.matches("Apple"));
+        assertFalse(smartphone2.matches("Samsung"));
     }
-
-//    @Test
-//    public void shouldMatchProducerNegative() {
-//        assertEquals(true, smartphone_1.matches("amsung"));
-//    }
-//
-//    @Test
-//    public void shouldNotMatchProducerNegative() {
-//        assertEquals(false, smartphone_1.matches("Samsung"));
-//    }
 
     @Test
     public void shouldMatchNamePositive() {
-        assertEquals(true, smartphone_1.matches("Galaxy S10"));
+        assertTrue(smartphone1.matches("Galaxy S10"));
     }
 
     @Test
     public void shouldNotMatchNamePositive() {
-        assertEquals(false, smartphone_1.matches("alaxy s10"));
+        assertFalse(smartphone2.matches("Galaxy s10"));
     }
-
-//    @Test
-//    public void shouldMatchNameNegative() {
-//        assertEquals(true, smartphone_1.matches("alaxy s10"));
-//    }
-
-//    @Test
-//    public void shouldNotMatchNameNegative() {
-//        assertEquals(false, smartphone_1.matches("Galaxy S10"));
-//    }
 
     @Test
     public void ShouldGetAllSuperClassMethods() {

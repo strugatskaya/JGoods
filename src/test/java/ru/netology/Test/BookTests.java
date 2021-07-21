@@ -4,55 +4,37 @@ import org.junit.jupiter.api.Test;
 import ru.netology.domain.Book;
 import ru.netology.domain.Product;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class BookTests {
 
-    Book book_1 = new Book(1, "God emperor of dune", 1, "Frank Gerbert");
+    Book book1 = new Book(1, "Children of Dune", 1, "Frank Gerbert");
+    Book book2 = new Book(0, "The Black company", 2, "Glen Cook");
 
     @Test
     public void shouldMatchAuthorPositive() {
-        assertEquals(true, book_1.matches("Frank Gerbert"));
+        assertTrue(book1.matches("Frank Gerbert"));
     }
 
     @Test
     public void shouldNotMatchAuthorPositive() {
-        assertEquals(false, book_1.matches("Glen Cook"));
+        assertFalse(book1.matches("Glen Cook"));
     }
-
-//    @Test
-//    public void shouldMatchAuthorNegative() {
-//        assertEquals(true, book_1.matches("Frank erbert"));
-//    }
-//
-//    @Test
-//    public void shouldNotMatchAuthorNegative() {
-//        assertEquals(false, book_1.matches("Frank Gerbert"));
-//    }
 
     @Test
     public void shouldMatchNamePositive() {
-        assertEquals(true, book_1.matches("God emperor of dune"));
+        assertTrue(book2.matches("The Black company"));
     }
 
     @Test
     public void shouldNotMatchNamePositive() {
-        assertEquals(false, book_1.matches("Children of Dune"));
+        assertFalse(book1.matches("Children of Dune"));
     }
-
-//    @Test
-//    public void shouldMatchNameNegative() {
-//        assertEquals(true, book_1.matches("emperor of dune"));
-//    }
-//
-//    @Test
-//    public void shouldNotMatchNameNegative() {
-//        assertEquals(false, book_1.matches("Children of Dune"));
-//    }
 
     @Test
 
-    public void ShouldGetAllSuperClassMethods() {
+    public void shouldGetAllSuperClassMethods() {
         Book book = new Book();
     }
 

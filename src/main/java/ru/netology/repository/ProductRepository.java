@@ -30,21 +30,20 @@ public class ProductRepository {
     }
 
     public void removeById(int id) throws NotFoundException {
-        {
-            int lenght = items.length - 1;
-            Product[] tmp = new Product[lenght];
-            int index = 0;
-            if (findById(id) == null) {
-                throw new NotFoundException("Element with: " + id + " is not found");
-            } else {
-                for (Product item : items) {
-                    if (item.getId() != id) {
-                        tmp[index] = item;
-                        index++;
-                    }
+
+        int lenght = items.length - 1;
+        Product[] tmp = new Product[lenght];
+        int index = 0;
+        if (findById(id) == null) {
+            throw new NotFoundException("Element with: " + id + " is not found");
+        } else {
+            for (Product item : items) {
+                if (item.getId() != id) {
+                    tmp[index] = item;
+                    index++;
                 }
-                items = tmp;
             }
+            items = tmp;
         }
     }
 }
