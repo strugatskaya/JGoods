@@ -13,13 +13,13 @@ public class BookTests {
     Book book2 = new Book(0, "The Black company", 2, "Glen Cook");
 
     @Test
-    public void shouldMatchAuthorPositive() {
-        assertTrue(book1.matches("Frank Gerbert"));
+    public void shouldMatchAuthor() {
+        assertTrue(book2.matches("Glen Cook"));
     }
 
     @Test
-    public void shouldNotMatchAuthorPositive() {
-        assertFalse(book1.matches("Glen Cook"));
+    public void shouldNotMatchAuthor() {
+        assertFalse(book1.matches("Joanne Rowling"));
     }
 
     @Test
@@ -29,7 +29,7 @@ public class BookTests {
 
     @Test
     public void shouldNotMatchNamePositive() {
-        assertFalse(book1.matches("Children of Dune"));
+        assertFalse(book1.matches("Harry Potter and The Deathly Hallows"));
     }
 
     @Test
