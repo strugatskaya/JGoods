@@ -18,6 +18,7 @@ public class ManagerTests {
         productManager.add(book2);
         productManager.add(smartphone1);
         productManager.add(smartphone2);
+        productManager.add(smartphone666);
     }
 
     ProductRepository productRepository = new ProductRepository();
@@ -42,7 +43,7 @@ public class ManagerTests {
     @Test
     void shouldSearchProducer() {
         ProductManager productManager = new ProductManager(productRepository);
-        assertArrayEquals(new Product[]{smartphone1}, productManager.searchBy("Samsung"));
+        assertArrayEquals(new Product[]{smartphone1, smartphone666}, productManager.searchBy("Samsung"));
     }
 
     @Test
@@ -54,13 +55,13 @@ public class ManagerTests {
     @Test
     void shouldSearchAmongSeveralSimilarResults() {
         ProductManager productManager = new ProductManager(productRepository);
-        assertArrayEquals(new Product[]{smartphone1}, productManager.searchBy("Samsung"));
+        assertArrayEquals(new Product[]{smartphone1, smartphone666}, productManager.searchBy("Samsung"));
     }
 
     @Test
-    void searchByTest() {
+    void searchByTestEmptyArray() {
         ProductManager productManager = new ProductManager(productRepository);
-        productManager.searchBy("Beam me up, Scotty");
+        assertArrayEquals(new Product[]{}, productManager.searchBy("Спасибо вам большое, Ксения, что объясняете!"));
     }
 }
 
