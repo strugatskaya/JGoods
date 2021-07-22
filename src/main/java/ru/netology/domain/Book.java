@@ -24,10 +24,10 @@ public class Book extends Product {
     public void setAuthor(String author) {
         this.author = author;
     }
-    @Override
-    public boolean matches(String search) {
-        return super.matches(search) || author.contains(search);
-    }
+//    @Override
+//    public boolean matches(String search) {
+//        return super.matches(search) || author.contains(search);
+//    }
 
     @Override
     public String toString() {

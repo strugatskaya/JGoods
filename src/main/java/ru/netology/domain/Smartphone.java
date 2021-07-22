@@ -27,10 +27,10 @@ public class Smartphone extends Product {
         this.producer = producer;
     }
 
-    @Override
-    public boolean matches(String search) {
-        return super.matches(search) || producer.contains(search);
-    }
+//    @Override
+//    public boolean matches(String search) {
+//        return super.matches(search) || producer.contains(search);
+//    }
 
     @Override
     public String toString() {
